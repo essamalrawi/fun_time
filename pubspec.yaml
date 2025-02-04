@@ -1,0 +1,36 @@
+name: fun_time
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/Mini.png"
+  min_sdk_android: 21
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/utils
+  filename: app_images.dart
+  field_prefix: null
+flutter_intl:
+  enabled: true
