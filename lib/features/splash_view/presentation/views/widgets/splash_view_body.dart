@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:fun_time/features/get_user_data/presentation/views/get_user_data_view.dart';
 import '../../../../../core/utils/app_images.dart';
-import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -28,7 +27,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void excuteNaviagtion() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, HomeView.routeName);
+      Navigator.pushReplacementNamed(context, GetUserDataView.routeName);
     });
   }
 }

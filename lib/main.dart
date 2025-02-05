@@ -17,6 +17,7 @@ class FunTime extends StatelessWidget {
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       theme: ThemeData(
+        fontFamily: 'Fredoka',
         scaffoldBackgroundColor: AppColors.primaryColor,
       ),
       debugShowCheckedModeBanner: false,

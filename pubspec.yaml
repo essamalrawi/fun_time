@@ -21,6 +21,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+  fonts:
+  - family: Fredoka
+    fonts:
+      - asset: assets/fonts/Fredoka-Regular.ttf
+  - family: PressStart
+    fonts:
+      - asset: assets/fonts/PressStart2P-Regular.ttf
 
 flutter_launcher_icons:
   android: "launcher_icon"
