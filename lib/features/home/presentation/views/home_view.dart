@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: CustomButtonNavigationBar(),
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70), child: CustomAppBar()),
+          preferredSize: Size.fromHeight(80), child: CustomAppBar()),
       body: HomeViewBody(),
     );
   }

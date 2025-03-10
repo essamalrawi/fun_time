@@ -37,7 +37,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
         children: bottomNavigationBarItems.asMap().entries.map((e) {
           var index = e.key;
           var entity = e.value;
-
+    
           return Expanded(
             flex: index == selectedIndex ? 3 : 2,
             child: GestureDetector(
@@ -52,7 +52,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
                     ? Color(0xffd8a48e)
                     : Color.fromARGB(255, 148, 137, 132),
               ),
-
+    
               //  NavigationBarItem(
               //   isSelected: selectedIndex == index,
               //   entity: entity,

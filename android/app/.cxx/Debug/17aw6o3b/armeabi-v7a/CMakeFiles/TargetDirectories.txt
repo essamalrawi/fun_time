@@ -1,0 +1,2 @@
+/home/lynx/dev/fun_time/android/app/.cxx/Debug/17aw6o3b/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/lynx/dev/fun_time/android/app/.cxx/Debug/17aw6o3b/armeabi-v7a/CMakeFiles/rebuild_cache.dir
