@@ -8,24 +8,39 @@ class GetNameTextField extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: TextFormField(
-            cursorColor: Colors.black,
-            validator: (value) {
-              if (value == null ||
-                  value.length < 3 ||
-                  !RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
-                return "Enter at least 3 letters";
-              }
-              return null;
-            },
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(16),
-              filled: true,
-              fillColor: const Color.fromARGB(45, 116, 115, 115),
-              hintText: 'Your name',
-              border: outlineInputBorder(),
+          child: Container(
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              color: Color(0xfff6e58d),
+              borderRadius: BorderRadius.circular(5),
             ),
-            style: const TextStyle(color: Colors.white),
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Color(0xffffbe76),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextFormField(
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                cursorColor: Colors.white,
+                validator: (value) {
+                  if (value == null ||
+                      value.length < 3 ||
+                      !RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
+                    return "Enter at least 3 letters";
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(16),
+                  hintText: 'Your name',
+                  hintStyle: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                  border: outlineInputBorder(),
+                ),
+              ),
+            ),
           ),
         ),
         SizedBox(
