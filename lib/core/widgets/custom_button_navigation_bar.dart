@@ -17,7 +17,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
       width: 375,
       height: 70,
       decoration: const ShapeDecoration(
-        color: Color(0xffffbe76),
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
@@ -48,8 +48,9 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
               },
               child: Icon(
                 entity.icon,
-                color:
-                    index == selectedIndex ? Color(0xfff6e58d) : Colors.white,
+                color: index == selectedIndex
+                    ? Color(0xffd8a48e)
+                    : Color.fromARGB(255, 148, 137, 132),
               ),
 
               //  NavigationBarItem(

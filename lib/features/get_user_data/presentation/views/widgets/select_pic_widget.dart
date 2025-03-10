@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../../../core/utils/app_images.dart';
 import 'icon_container.dart';
 
@@ -65,6 +64,8 @@ class _SelectPicWidgetState extends State<SelectPicWidget> {
       Flexible(
         child: Container(
           padding: const EdgeInsets.all(5),
+          width: 200,
+          height: 200,
           decoration: BoxDecoration(
             color: Color(0xfff6e58d),
             borderRadius: BorderRadius.circular(100),
