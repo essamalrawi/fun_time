@@ -14,6 +14,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       width: 375,
       height: 70,
       decoration: const ShapeDecoration(
