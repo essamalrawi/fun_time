@@ -5,7 +5,7 @@ import 'package:fun_time/features/splash_view/presentation/views/splash_view.dar
 
 import 'core/functions/on_generate_route.dart';
 
-void main() {  
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const FunTime());

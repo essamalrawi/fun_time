@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fun_time/core/utils/app_colors.dart';
 
 class CustomAppBarIcon extends StatelessWidget {
   const CustomAppBarIcon({super.key});
@@ -19,7 +20,7 @@ class CustomAppBarIcon extends StatelessWidget {
               height: 5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Color(0xffc08fa6),
+                color: AppColors.secondPrimaryColor,
               ),
             ),
             SizedBox(
@@ -30,7 +31,7 @@ class CustomAppBarIcon extends StatelessWidget {
               height: 5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Color(0xffc08fa6),
+                color: AppColors.secondPrimaryColor,
               ),
             )
           ],

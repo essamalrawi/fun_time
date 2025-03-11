@@ -19,9 +19,15 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [Image.asset(Assets.imagesLogo)],
+      children: [
+        Center(
+          child: SizedBox(
+              width: MediaQuery.sizeOf(context).width * .75,
+              child: Image.asset(Assets.imagesLogo)),
+        )
+      ],
     );
   }
 

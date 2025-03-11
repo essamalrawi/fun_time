@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fun_time/core/utils/app_colors.dart';
+import 'package:fun_time/features/get_user_data/presentation/views/widgets/custom_get_name_text_field.dart';
 
 class GetNameTextField extends StatelessWidget {
   const GetNameTextField({super.key});
@@ -11,36 +13,10 @@ class GetNameTextField extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: Color(0xfff6e58d),
+              color: AppColors.secondPrimaryColor,
               borderRadius: BorderRadius.circular(5),
             ),
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Color(0xffffbe76),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: TextFormField(
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                cursorColor: Colors.white,
-                validator: (value) {
-                  if (value == null ||
-                      value.length < 3 ||
-                      !RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
-                    return "Enter at least 3 letters";
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(16),
-                  hintText: 'Your name',
-                  hintStyle: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                  border: outlineInputBorder(),
-                ),
-              ),
-            ),
+            child: CustomGetNameTextField(),
           ),
         ),
         SizedBox(
@@ -48,12 +24,6 @@ class GetNameTextField extends StatelessWidget {
           child: Icon(Icons.close, color: Colors.red),
         )
       ],
-    );
-  }
-
-  OutlineInputBorder outlineInputBorder() {
-    return OutlineInputBorder(
-      borderSide: BorderSide.none,
     );
   }
 }

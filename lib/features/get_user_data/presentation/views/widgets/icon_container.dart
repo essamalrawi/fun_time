@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fun_time/core/utils/app_colors.dart';
 
 class IconContainer extends StatelessWidget {
   const IconContainer({
@@ -9,22 +10,15 @@ class IconContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Color(0xfff6e58d),
-      ),
-      child: Container(
-          decoration: BoxDecoration(
-            color: Color(0xffffbe76),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          width: 40,
-          height: 40,
-          child: Icon(
-            icon,
-            color: Colors.white,
-          )),
-    );
+        decoration: BoxDecoration(
+          color: AppColors.secondPrimaryColor,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        width: 40,
+        height: 40,
+        child: Icon(
+          icon,
+          color: Colors.white,
+        ));
   }
 }

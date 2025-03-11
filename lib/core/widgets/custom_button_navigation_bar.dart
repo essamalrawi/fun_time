@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fun_time/core/utils/app_colors.dart';
 import '../domain/entities/bottom_navigation_bar_entity.dart';
 
 class CustomButtonNavigationBar extends StatefulWidget {
@@ -14,15 +15,14 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       width: 375,
       height: 70,
       decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
         ),
         shadows: [
@@ -38,7 +38,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
         children: bottomNavigationBarItems.asMap().entries.map((e) {
           var index = e.key;
           var entity = e.value;
-    
+
           return Expanded(
             flex: index == selectedIndex ? 3 : 2,
             child: GestureDetector(
@@ -50,10 +50,10 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
               child: Icon(
                 entity.icon,
                 color: index == selectedIndex
-                    ? Color(0xffd8a48e)
+                    ? AppColors.secondPrimaryColor
                     : Color.fromARGB(255, 148, 137, 132),
               ),
-    
+
               //  NavigationBarItem(
               //   isSelected: selectedIndex == index,
               //   entity: entity,

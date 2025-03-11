@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fun_time/core/utils/app_colors.dart';
 import 'package:fun_time/features/home/presentation/views/widgets/custom_icon_app_bar.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -20,11 +21,6 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           Spacer(),
-          Divider(
-            color: Color(0xffd8a48e),
-            height: 0,
-            thickness: 5,
-          )
         ],
       ),
     );

@@ -47,7 +47,7 @@ class _SelectPicWidgetState extends State<SelectPicWidget> {
   var counter = 0;
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       IconButton(
           onPressed: () {
             if (!(counter == 0)) {
@@ -67,7 +67,6 @@ class _SelectPicWidgetState extends State<SelectPicWidget> {
           width: 200,
           height: 200,
           decoration: BoxDecoration(
-            color: Color(0xfff6e58d),
             borderRadius: BorderRadius.circular(100),
           ),
           child: ClipRRect(

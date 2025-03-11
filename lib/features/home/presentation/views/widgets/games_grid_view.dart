@@ -9,7 +9,7 @@ class GamesGridView extends StatelessWidget {
     return SliverGrid.builder(
         itemCount: 8,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: 8,
+          mainAxisSpacing: 16,
           crossAxisSpacing: 16,
           crossAxisCount: 2,
           childAspectRatio: 200 / 250,
