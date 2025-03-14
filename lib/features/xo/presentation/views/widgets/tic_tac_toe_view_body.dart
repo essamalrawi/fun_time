@@ -9,37 +9,54 @@ class TicTacToeViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Center(
-            child: Stack(
-          children: [
-            CustomPaint(
-              size: Size(250, 250),
-              painter: GridPainter(),
+          child: SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.8,
+            height: 330,
+            child: GridView.count(
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              children: List.generate(9, (index) {
+                const double borderWidth = 10.0;
+
+                Border border = Border(
+                  top: index >= 3
+                      ? const BorderSide(
+                          color: Colors.black, width: borderWidth)
+                      : BorderSide.none,
+                  right: index % 3 != 2
+                      ? const BorderSide(
+                          color: Colors.black, width: borderWidth)
+                      : BorderSide.none,
+                );
+
+                return Container(
+                  decoration: BoxDecoration(
+                    border: border,
+                  ),
+                  child: XContainerTTicTacToe(),
+                );
+              }),
             ),
-          ],
-        ))
+          ),
+        ),
       ],
     );
   }
 }
 
-class GridPainter extends CustomPainter {
+class XContainerTTicTacToe extends StatelessWidget {
+  const XContainerTTicTacToe({super.key});
+
   @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 12.0
-      ..style = PaintingStyle.stroke;
-
-    double third = size.width / 3;
-
-    canvas.drawLine(Offset(third, 0), Offset(third, size.height), paint);
-    canvas.drawLine(
-        Offset(2 * third, 0), Offset(2 * third, size.height), paint);
-
-    canvas.drawLine(Offset(0, third), Offset(size.width, third), paint);
-    canvas.drawLine(Offset(0, 2 * third), Offset(size.width, 2 * third), paint);
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Container(
+        width: 10,
+        height: 10,
+        color: const Color.fromARGB(255, 172, 133, 133),
+      ),
+    );
   }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
