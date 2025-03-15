@@ -27,6 +27,7 @@ flutter:
     - assets/images/
     - assets/images/games_avatar/
     - assets/images/avatars/
+    - assets/images/icons/
   fonts:
     - family: Fredoka
       fonts:
@@ -34,6 +35,9 @@ flutter:
     - family: PressStart
       fonts:
         - asset: assets/fonts/PressStart2P-Regular.ttf
+    - family: Vinpnago
+      fonts:
+        - asset: assets/fonts/Vipnagorgialla Bd It.otf
 
 flutter_launcher_icons:
   android: "launcher_icon"
