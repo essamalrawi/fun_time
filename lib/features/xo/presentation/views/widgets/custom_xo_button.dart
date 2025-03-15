@@ -8,7 +8,9 @@ class CustomXoButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
         icon: Container(
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
