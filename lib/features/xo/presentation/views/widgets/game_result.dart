@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fun_time/features/xo/presentation/manager/offline_1_v_1_mode/offline_1_v_1_mode_cubit.dart';
 
 class GameResult extends StatelessWidget {
   const GameResult({super.key});
@@ -26,7 +28,7 @@ class GameResult extends StatelessWidget {
                       fontFamily: "Vinpnago"),
                 ),
                 Text(
-                  "X",
+                  context.read<Offline1V1ModeCubit>().xScore.toString(),
                   style: TextStyle(
                       color: Color(0xffFC9983),
                       fontWeight: FontWeight.w900,
@@ -70,7 +72,7 @@ class GameResult extends StatelessWidget {
                       fontFamily: "Vinpnago"),
                 ),
                 Text(
-                  "O",
+                  context.read<Offline1V1ModeCubit>().oScore.toString(),
                   style: TextStyle(
                       color: Color(0xff00B4EF),
                       fontWeight: FontWeight.w900,

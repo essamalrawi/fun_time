@@ -13,7 +13,6 @@ void main() {
 
 class FunTime extends StatelessWidget {
   const FunTime({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

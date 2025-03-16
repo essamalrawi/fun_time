@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fun_time/features/xo/presentation/views/widgets/o_symbol.dart';
 import 'package:fun_time/features/xo/presentation/views/widgets/x_symbol.dart';
 
-class GridBuildGame extends StatelessWidget {
+import '../../manager/offline_1_v_1_mode/offline_1_v_1_mode_cubit.dart';
+
+class GridBuildGame extends StatefulWidget {
   const GridBuildGame({super.key});
+
+  @override
+  State<GridBuildGame> createState() => _GridBuildGameState();
+}
+
+class _GridBuildGameState extends State<GridBuildGame> {
+  String currectMove = "X";
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +26,15 @@ class GridBuildGame extends StatelessWidget {
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            if (!context.read<Offline1V1ModeCubit>().spots.containsKey(index)) {
+              if (true) {}
+              setState(() {
+                context.read<Offline1V1ModeCubit>().spots[index] = currectMove;
+                currectMove = currectMove == "X" ? "O" : "X";
+              });
+            }
+          },
           child: Container(
             decoration: BoxDecoration(
                 border: Border(
@@ -33,11 +51,21 @@ class GridBuildGame extends StatelessWidget {
                           )
                         : BorderSide.none)),
             child: Center(
-              child: index % 3 != 1 ? XSymbol() : OSymbol(),
+              child: !checkIfEmpty(
+                      spots: context.read<Offline1V1ModeCubit>().spots,
+                      index: index)
+                  ? (context.read<Offline1V1ModeCubit>().spots[index] == "X"
+                      ? XSymbol()
+                      : OSymbol())
+                  : SizedBox(),
             ),
           ),
         );
       },
     );
   }
+}
+
+bool checkIfEmpty({required Map<int, String> spots, required int index}) {
+  return !spots.containsKey(index);
 }

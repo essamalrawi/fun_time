@@ -20,7 +20,7 @@ class CustomXoButton extends StatelessWidget {
           child: Icon(
             Icons.arrow_back,
             color: Color(0xffD38BAD),
-            size: 33,
+            size: 35,
           ),
         ));
   }
