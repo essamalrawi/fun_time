@@ -16,10 +16,25 @@ class Offline1V1ModeCubit extends Cubit<Offline1V1ModeState> {
     oScore += 1;
   }
 
-  resetScore() {
-    xScore = 0;
-    oScore = 0;
+  clearSpots() {
+    // xScore = 0;
+    // oScore = 0;
     spots.clear();
+  }
+
+  bool isGameOngoing() {
+    if (checkWinner("X") || checkWinner("O")) {
+      clearSpots();
+      Offline1V1ModeGameUpdate();
+      return false;
+    }
+    if (spots.length == 9 || spots.containsValue("")) {
+      clearSpots();
+      Offline1V1ModeGameUpdate();
+      return false;
+    }
+    Offline1V1ModeGameUpdate();
+    return spots.length < 9 || spots.containsValue("");
   }
 
   bool checkWinner(String player) {

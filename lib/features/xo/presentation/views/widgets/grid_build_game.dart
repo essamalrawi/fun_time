@@ -28,11 +28,15 @@ class _GridBuildGameState extends State<GridBuildGame> {
         return GestureDetector(
           onTap: () {
             if (!context.read<Offline1V1ModeCubit>().spots.containsKey(index)) {
-              if (true) {}
-              setState(() {
-                context.read<Offline1V1ModeCubit>().spots[index] = currectMove;
-                currectMove = currectMove == "X" ? "O" : "X";
-              });
+              if (context.read<Offline1V1ModeCubit>().isGameOngoing()) {
+                setState(() {
+                  context.read<Offline1V1ModeCubit>().spots[index] =
+                      currectMove;
+                  currectMove = currectMove == "X" ? "O" : "X";
+                });
+              }
+            } else {
+              context.read<Offline1V1ModeCubit>().isGameOngoing();
             }
           },
           child: Container(
