@@ -5,15 +5,9 @@ import '../../manager/offline_1_v_1_mode/offline_1_v_1_mode_cubit.dart'
     show Offline1V1ModeCubit, Offline1V1ModeState;
 import 'custom_tic_tac_toe_app_bar.dart';
 
-class TicTacToeViewBody extends StatefulWidget {
+class TicTacToeViewBody extends StatelessWidget {
   const TicTacToeViewBody({super.key});
 
-  @override
-  State<TicTacToeViewBody> createState() => _TicTacToeViewBodyState();
-}
-
-class _TicTacToeViewBodyState extends State<TicTacToeViewBody> {
-  String displayExOh = '';
   @override
   Widget build(BuildContext context) {
     return Column(

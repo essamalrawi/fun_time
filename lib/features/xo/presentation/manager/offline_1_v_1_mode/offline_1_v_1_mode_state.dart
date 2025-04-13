@@ -5,4 +5,10 @@ sealed class Offline1V1ModeState {}
 
 final class Offline1V1ModeInitial extends Offline1V1ModeState {}
 
-final class Offline1V1ModeGameUpdate extends Offline1V1ModeState {}
+final class Offline1V1ModeGameOnGoing extends Offline1V1ModeState {}
+
+final class Offline1V1ModeGameIsEmpty extends Offline1V1ModeState {}
+
+final class Offline1V1ModeGameIsTie extends Offline1V1ModeState {}
+
+final class Offline1V1ModeGameIsWin extends Offline1V1ModeState {}

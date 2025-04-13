@@ -13,8 +13,6 @@ class GridBuildGame extends StatefulWidget {
 }
 
 class _GridBuildGameState extends State<GridBuildGame> {
-  String currectMove = "X";
-
   @override
   Widget build(BuildContext context) {
     const double borderWidth = 13;
@@ -27,17 +25,8 @@ class _GridBuildGameState extends State<GridBuildGame> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            if (!context.read<Offline1V1ModeCubit>().spots.containsKey(index)) {
-              if (context.read<Offline1V1ModeCubit>().isGameOngoing()) {
-                setState(() {
-                  context.read<Offline1V1ModeCubit>().spots[index] =
-                      currectMove;
-                  currectMove = currectMove == "X" ? "O" : "X";
-                });
-              }
-            } else {
-              context.read<Offline1V1ModeCubit>().isGameOngoing();
-            }
+            print(context.read<Offline1V1ModeCubit>().spots);
+            context.read<Offline1V1ModeCubit>().addSpot(index: index);
           },
           child: Container(
             decoration: BoxDecoration(
